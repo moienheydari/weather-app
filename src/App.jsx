@@ -1,23 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import getWeather from './api/weatherApi';
-
-function App() {
-  const [weatherData, setWeatherData] = useState({});
+import './css/App.css'
+import Header from './components/Header';
 
 
+export default function App() {
   return (
     <>
-      <div className="card">
-        <button onClick={async () => { setWeatherData(await (getWeather('tehran'))) }}>
-          Click
-        </button>
-        <p>
-          {JSON.stringify(weatherData, null, 2)}
-        </p>
-      </div>
+      <Header />
     </>
   )
 }
 
-export default App
