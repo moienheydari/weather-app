@@ -20,13 +20,17 @@ export default function Header() {
 
 
 const HeaderCont = styled.div`
-
+    padding: 20px;
+    display: flex;
+    gap: 75px;
+    justify-content: center;
 `
 
 const HeaderCardCont = styled.div`
-
+    display: flex;
+    justify-content: center;
 `
 
-const HedarCardText = styled.p`
+const HedarCardText = styled.button`
 
 `
