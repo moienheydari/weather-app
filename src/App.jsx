@@ -1,30 +1,19 @@
 import { useState } from 'react'
-import axios from 'axios'
 import './App.css'
+import getWeather from './api/weatherApi';
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
 
-  async function getWeather() {
-    const url = 'https://reqres.in/api/users?page=2';
-
-    try {
-      const response = await axios.get(url);
-      // const result = await response.text();
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   return (
     <>
       <div className="card">
-        <button onClick={getWeather}>
+        <button onClick={async () => { setWeatherData(await (getWeather('tehran'))) }}>
           Click
         </button>
         <p>
-          {JSON.stringify(weatherData, 5, '')}
+          {JSON.stringify(weatherData, null, 2)}
         </p>
       </div>
     </>
