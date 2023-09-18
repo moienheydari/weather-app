@@ -22,7 +22,11 @@ const FlippingCard = styled.div`
     transition: transform 0.8s ease-out;
     flex-grow: 1;
 
-    transform: rotateY(${(props) => (props.show === 'Search') ? '0deg' : '180deg'});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotateY(${({ show }) => (show === 'Search') ? '0deg' : '180deg'});
 
     
     background: rgba(0, 0, 0, 0.15);
