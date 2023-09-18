@@ -5,14 +5,14 @@ export default function Header() {
     return (
         <HeaderCont>
             <HeaderCardCont>
-                <HedarCardText>
+                <HeaderCardText>
                     Search
-                </HedarCardText>
+                </HeaderCardText>
             </HeaderCardCont>
             <HeaderCardCont>
-                <HedarCardText>
+                <HeaderCardText>
                     Result
-                </HedarCardText>
+                </HeaderCardText>
             </HeaderCardCont>
         </HeaderCont>
     )
@@ -31,6 +31,6 @@ const HeaderCardCont = styled.div`
     justify-content: center;
 `
 
-const HedarCardText = styled.button`
+const HeaderCardText = styled.button`
 
 `
