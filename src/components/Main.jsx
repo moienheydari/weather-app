@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useCallback, useContext } from 'react'
 import styled from 'styled-components'
 import Search from './Search'
 import Result from './Result'
 
 export default function Main({ show }) {
+
     return (
-        <FlippingCard show={show}>
+        <FlippingCard $show={show}>
             <Front>
                 <Search />
             </Front>
@@ -26,7 +27,7 @@ const FlippingCard = styled.div`
     justify-content: center;
     align-items: center;
 
-    transform: rotateY(${({ show }) => (show === 'Search') ? '0deg' : '180deg'});
+    transform: rotateY(${({ $show }) => ($show === 'Search') ? '0deg' : '180deg'});
 
     
     background: rgba(0, 0, 0, 0.15);

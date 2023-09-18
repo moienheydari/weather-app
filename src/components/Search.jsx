@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import getWeather from '../api/weatherApi';
+import { MyContx } from '../contexts/WeatherContext';
 
 export default function Search() {
     const [searchInput, setSearchInput] = useState('');
+    const [disabled, setDisabled] = useState(false);
+    const weather = useContext(MyContx);
 
-    
+    async function fetchData(name) {
+        setDisabled(true);
+        weather.setWeather(await getWeather(name));
+        setDisabled(false);
+    }
+
     function handleKeyDown({ key }) {
-        if (key === 'Enter') {
+        if (key === 'Enter' && !disabled) {
             handleEnter();
         }
     }
@@ -14,6 +23,7 @@ export default function Search() {
 
     function handleEnter() {
         if (searchInput) {
+            fetchData(searchInput);
             setSearchInput('');
         }
     }
