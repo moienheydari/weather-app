@@ -8,6 +8,6 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr 10fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
 }
